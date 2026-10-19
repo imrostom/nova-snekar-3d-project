@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --volt: #D6FF4D; }
+
+html { background: #070908; scrollbar-width: thin; scrollbar-color: #2a3a22 #070908; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+body {
+  @apply bg-ink text-white font-sans antialiased;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--volt); color: #000; }
+
+@layer components {
+  .eyebrow { @apply text-[11px] font-medium uppercase tracking-[0.3em] text-volt; }
+  .btn-volt {
+    @apply inline-flex items-center justify-center gap-3 rounded-full bg-volt px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-black transition-shadow hover:shadow-volt focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-3 rounded-full border border-white/25 px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-volt hover:text-volt focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
+  .container-x { @apply mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-14; }
+}
+
+.reveal-line { overflow: hidden; display: block; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none !important; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
